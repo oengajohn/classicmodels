@@ -6,6 +6,5 @@ import io.jotech.classicmodels.entity.Customer;
 
 public class RepaymentService {
     public void setupPaymentSchedule(Customer customer, BigDecimal principle, Integer months){
-        throw  new UnsupportedOperationException("setupPaymentSchedule not implemented");
     }
 }

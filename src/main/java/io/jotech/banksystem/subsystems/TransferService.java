@@ -6,6 +6,5 @@ import io.jotech.classicmodels.entity.Customer;
 
 public class TransferService {
     public void makeTransfer(BigDecimal principle, Customer customer){
-        throw new UnsupportedOperationException("makeTransfer not implemented");
     }
 }
