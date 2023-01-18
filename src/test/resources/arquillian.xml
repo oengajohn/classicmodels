@@ -38,12 +38,12 @@
     <!-- Configuration to be used when the WidlFly remote profile is active -->
     <container qualifier="wildfly-remote">
         <configuration>
-            <property name="managementAddress">127.0.0.1</property>
-            <property name="managementPort">9990</property>
+            <property name="managementAddress">192.168.100.210/</property>
+            <property name="managementPort">7410</property>
             <!-- since wildfly-arquillian 5.0.0 alpha2, the property protocol is deprecated and replaced by the property managementProtocol -->
             <property name="managementProtocol">remote+http</property>
             <property name="username">admin</property>
-            <property name="password">Admin@123</property>
+            <property name="password">admin@123</property>
         </configuration>
     </container>
 

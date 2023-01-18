@@ -24,12 +24,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Getter
 @Setter
 @Builder
+@ToString
 @Entity
 @Table(name = "customers", indexes = {
         @Index(name = "salesRepEmployeeNumber", columnList = "salesRepEmployeeNumber")

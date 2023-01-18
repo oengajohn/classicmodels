@@ -8,7 +8,7 @@ import jakarta.persistence.PersistenceContext;
 
 public class EntityManagerProducer {
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "TEST_PU")
     private EntityManager em;
 
     @Produces

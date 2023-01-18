@@ -39,7 +39,7 @@
 
         <!-- Arquillian 1.7.0 adds Jakarta EE 9 and JUnit 5 support-->
         <arquillian-bom.version>1.7.0.Alpha13</arquillian-bom.version>
-        <junit-jupiter.version>5.9.1</junit-jupiter.version>
+        <junit-jupiter.version>5.8.2</junit-jupiter.version>
 
         <!-- Test Utilities -->
         <mockito.version>4.8.0</mockito.version>
@@ -278,11 +278,21 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.8.2</version>
+        <scope>test</scope>
+    </dependency>
+        <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>4.11.0</version>
+        </dependency>
         <dependency>
             <groupId>org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-impl-maven</artifactId>

@@ -8,18 +8,29 @@ import io.jotech.banksystem.subsystems.RepaymentPayabilityService;
 import io.jotech.banksystem.subsystems.RepaymentService;
 import io.jotech.banksystem.subsystems.TransferService;
 import io.jotech.classicmodels.entity.Customer;
-import io.jotech.classicmodels.service.PaymentService;
+import jakarta.inject.Inject;
+
 
 public class BankSystem {
-    CreditRatingService creditRatingService = new CreditRatingService();
+    @Inject
 
-    InterBankPolicyService interBankPolicyService = new InterBankPolicyService();
+    private CreditRatingService creditRatingService;
 
-    RepaymentPayabilityService repaymentPayabilityService = new RepaymentPayabilityService();
+    @Inject
+    private InterBankPolicyService interBankPolicyService;
 
-    RepaymentService repaymentService = new RepaymentService();
+    @Inject
 
-    TransferService transferService = new TransferService();
+    private RepaymentPayabilityService repaymentPayabilityService;
+
+    @Inject
+
+    private RepaymentService repaymentService;
+
+    @Inject
+
+    private TransferService transferService;
+
 
     public boolean processLoanApplication(
             Customer customer,
