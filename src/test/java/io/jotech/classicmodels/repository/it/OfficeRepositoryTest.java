@@ -85,6 +85,7 @@ class OfficeRepositoryTest {
 
 
     }
+
     @Test
     @DisplayName("OfficeFindAllAfterInsertion")
     @Order(4)
@@ -93,6 +94,55 @@ class OfficeRepositoryTest {
         int expected = 8;
         Assertions.assertEquals(expected, offices.size(), "Offices should be " + 8 + " at the point of invoking listAll()");
     }
+
+    @Test
+    @DisplayName("officeUpdateOfficeWithGivenOfficeCode")
+    @Order(5)
+    void officeUpdateOfficeWithGivenOfficeCode() {
+        var office = Office.builder()
+                .city("Kisii")
+                .addressLine1("Bobasi")
+                .build();
+        var officeCode = "8";
+
+        Office updatedOffice = officeRepository.updateByOfficeCode(officeCode, office);
+
+        Assertions.assertAll(
+                () -> Assertions.assertEquals("Kisii", updatedOffice.getCity()),
+                () -> Assertions.assertEquals("Bobasi", updatedOffice.getAddressLine1()),
+                () -> Assertions.assertEquals("8", updatedOffice.getOfficeCode())
+        );
+
+    }
+
+    @Test
+    @DisplayName("officeUpdateOfficeWithGivenWrongOfficeCode")
+    @Order(6)
+    void officeUpdateOfficeWithGivenWrongOfficeCode() {
+        var office = Office.builder()
+                .city("Kisii")
+                .addressLine1("Bobasi")
+                .build();
+        var officeCode = "456665";
+
+        Assertions.assertThrows(
+                UnsupportedOperationException.class,
+                () -> officeRepository.updateByOfficeCode(officeCode, office)
+        );
+
+    }
+    @Test
+    @DisplayName("DeletingAnOfficeWithGivenOfficeCode")
+    void deletingAnOfficeWithGivenOfficeCode() {
+        //given
+        var officeCode = "8";
+//        when
+        boolean wasDeleted = officeRepository.deleteById(officeCode);
+//        then
+        Assertions.assertTrue(wasDeleted);
+
+    }
+
 
 
 }
